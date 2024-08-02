@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 33507ffed38e7894cbc8628d35de4b53
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _FlowLight: {fileID: 2800000, guid: aeb46886909512e41842722f15bb898b, type: 3}
+  - _FlowMap: {fileID: 2800000, guid: f4a4b1c04c15a784ca546dc6c403e249, type: 3}
+  - _DissolveRampTex: {fileID: 2800000, guid: 256d86d8496a4e0f947100121f1fafb2, type: 3}
   nonModifiableTextures: []
   userData: 
   assetBundleName: 

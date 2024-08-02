@@ -12,7 +12,9 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _RECEIVESHADOWS_OFF
+  - _RECEIVE_SHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,12 +29,28 @@ Material:
         m_Texture: {fileID: 2800000, guid: e5da0c3efc51421baf0f1ee86c9f88ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DissolveRampTex:
+        m_Texture: {fileID: 2800000, guid: 256d86d8496a4e0f947100121f1fafb2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowLight:
+        m_Texture: {fileID: 2800000, guid: aeb46886909512e41842722f15bb898b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: f4a4b1c04c15a784ca546dc6c403e249, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
     - _HitNoise:
         m_Texture: {fileID: 2800000, guid: 66819fafe6a64db797e1a5f6086c487f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HitRampTex:
         m_Texture: {fileID: 2800000, guid: bfb5d11eb2154099bda5558461f45026, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -50,20 +68,36 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _CullMode: 0
+    - _CullMode: 2
+    - _DepthFadeDistance: 0.8
+    - _DepthFadePower: 5
+    - _DissolveAmount: 19.7
+    - _DissolveEdgeIntensity: 0.3
+    - _DissolveNoiseIntensity: 1
+    - _DissolveSpread: 1
+    - _EmissIntensity: 20
     - _EnvironmentReflections: 1
+    - _FlowSpeed: 0.2
     - _HitFadeDistance: 6
     - _HitFadePower: 1
-    - _HitNoiseIntensity: 0
-    - _HitSpread: 0
+    - _HitNoiseIntensity: 2
+    - _HitSpread: 2
+    - _HitWaveIntensity: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
+    - _RimBias: 0.21
+    - _RimPower: 3.95
+    - _RimScale: 0.5
+    - _Size: 1
     - _Smoothness: 0.5
     - _SpecularHighlights: 1
     - __dirty: 0
     m_Colors:
     - _Diffuse: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+    - _DissolvePoint: {r: 1.97, g: 5.83, b: 8.89, a: 0}
+    - _EmissColor: {r: 0.7662321, g: 0.65513617, b: 0.78616345, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HitNoiseTilling: {r: 1, g: 1, b: 1, a: 0}
+    - _FlowStrength: {r: -0.5, g: 0.3, b: 0, a: 0}
+    - _HitNoiseTilling: {r: 0.1, g: 0.1, b: 0.1, a: 0}
   m_BuildTextureStacks: []

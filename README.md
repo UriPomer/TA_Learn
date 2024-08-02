@@ -15,3 +15,6 @@
 
 ## 雨天特效
 ![img](/img/rain.png)
+
+## 力场护盾特效
+![img](/img/forcefield.gif)
