@@ -25,3 +25,7 @@
 
 ## 线性雾效（距离雾、高度雾）
 ![img](/img/linearfog.png)
+
+
+## Rendertexture车雪轮胎痕迹
+![img](/img/snow.gif)
