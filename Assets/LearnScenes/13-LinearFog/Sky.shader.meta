@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 2afe40ad0276db5408002116d7118d0d
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _SkyHDR: {fileID: 2800000, guid: 72f443e5a6a43af4088f97aa47c47e24, type: 3}
+  - _HeightNoise: {fileID: 2800000, guid: 66819fafe6a64db797e1a5f6086c487f, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

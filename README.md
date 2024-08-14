@@ -21,3 +21,7 @@
 
 ## 霓虹街景
 ![img](/img/neon_rain.gif)
+
+
+## 线性雾效（距离雾、高度雾）
+![img](/img/linearfog.png)
