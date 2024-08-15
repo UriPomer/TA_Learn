@@ -27,5 +27,5 @@
 ![img](/img/linearfog.png)
 
 
-## Rendertexture车雪轮胎痕迹
+## Rendertexture车雪轮胎痕迹（URP复刻版）
 ![img](/img/snow.gif)
