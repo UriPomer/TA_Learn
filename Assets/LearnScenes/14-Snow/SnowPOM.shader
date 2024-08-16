@@ -72,27 +72,31 @@ Shader "Learn/Snow/SnowPOM"
                 float3 normalDirection = normalize(i.normal);
                 fixed3 worldViewDir = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 fixed3 viewDir = i.tSpace0.xyz * worldViewDir.x + i.tSpace1.xyz * worldViewDir.y + i.tSpace2.xyz *
-                    worldViewDir.z;
-                float2 vParallaxDirection = normalize(viewDir.xy);
-                float fLength = length(viewDir);
-                float fParallaxLength = sqrt(fLength * fLength - viewDir.z * viewDir.z) / viewDir.z;
+                    worldViewDir.z; // Transform view direction to tangent space
+                float2 vParallaxDirection = normalize(viewDir.xy); // Get parallax direction
+
+                float fParallaxLength = sqrt(length(viewDir) * length(viewDir) - viewDir.z * viewDir.z) / viewDir.z;
                 float2 vParallaxOffsetTS = vParallaxDirection * fParallaxLength * _Parallax;
+
+
                 float nMinSamples = 6;
                 float nMaxSamples = min(_ParallaxSamples, 100);
+                //根据视角和法线的夹角来决定采样次数
                 int nNumSamples = (int)(lerp(nMinSamples, nMaxSamples, 1 - dot(worldViewDir, i.normal)));
+
                 float fStepSize = 1.0 / (float)nNumSamples;
-                int nStepIndex = 0;
-                float fCurrHeight = 0.0;
+
+                float fCurrHeight = 0.0; //当前的高度
                 float fPrevHeight = 1.0;
-                float2 vTexOffsetPerStep = fStepSize * vParallaxOffsetTS;
-                float2 vTexCurrentOffset = i.tex.xy;
-                float fCurrentBound = 1.0;
+                float2 vTexOffsetPerStep = fStepSize * vParallaxOffsetTS; //每一步的偏移量
+                float2 vTexCurrentOffset = i.tex.xy; //当前的纹理坐标
+                float fCurrentBound = 1.0; //当前的限制高度，如果比这个高度高，就停止。是三角形相似的原理
                 float fParallaxAmount = 0.0;
                 float2 pt1 = 0;
                 float2 pt2 = 0;
                 float2 dx = ddx(i.tex.xy);
                 float2 dy = ddy(i.tex.xy);
-                for (nStepIndex = 0; nStepIndex < nNumSamples; nStepIndex++)
+                for (int nStepIndex = 0; nStepIndex < nNumSamples; nStepIndex++)
                 {
                     vTexCurrentOffset -= vTexOffsetPerStep;
                     fCurrHeight = 1 - tex2D(_HeightMap, vTexCurrentOffset, dx, dy).r;
@@ -126,6 +130,8 @@ Shader "Learn/Snow/SnowPOM"
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
                 float3 diffuseReflection = _LightColor0.rgb * saturate(dot(normalDirection, lightDirection));
                 float3 color = diffuseReflection + UNITY_LIGHTMODEL_AMBIENT.rgb;
+
+
                 float4 tex = tex2D(_MainTex, i.tex.xy);
                 float4 groundTex = tex2D(_GroundTex, i.tex.xy) * _GroundColor;
                 tex.xyz = lerp(groundTex.xyz, tex.xyz, saturate(fParallaxAmount));
