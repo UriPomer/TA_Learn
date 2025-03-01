@@ -1,10 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/unity
-# Edit at https://www.toptal.com/developers/gitignore?templates=unity
-
-### Unity ###
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+.utmp/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -49,6 +47,8 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+.idea
+.plastic
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -62,6 +62,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+*.unitypackage.meta
 *.app
 
 # Crashlytics generated file
@@ -74,12 +75,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# End of https://www.toptal.com/developers/gitignore/api/unity
-
-.idea
-.vscode
-.vsconfig
-.plastic
-
-Assets/LearnScenes/15-CyberScene
-Assets/LearnScenes/15-CyberScene.meta
+ignore.conf
